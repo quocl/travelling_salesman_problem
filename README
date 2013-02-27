@@ -1,0 +1,7 @@
+This is the genetic algorithm applied into the travelling salesman problem.
+Author: Quoc
+Usage:
+	make	run
+By default, the population size will be 10 and the number of generations will be 100. In order to change these values, for example,
+change population size to 100 and number of generations to 100, run:
+	make  run POP=100  GEN=100
