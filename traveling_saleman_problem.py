@@ -65,11 +65,10 @@ class GeneticAlgorithm:
 		return Chromosome(graph, child)
 
 	@staticmethod
-	def evolution(p):
+	def evolution(p, choice = 0):
 		"make the input population evolve"
 		l = len(p.population)
 		for i in xrange(l):
-			choice = random.randint(0, 1) 
 			if choice == 0:
 				chromosome = p.population[i]
 				p.population.append(GeneticAlgorithm.permutation(p.graph, chromosome))
@@ -87,7 +86,7 @@ class GeneticAlgorithm:
 		return p	
 
 def __main__():
-	if len(sys.argv) != 3:
+	if len(sys.argv) != 4:
 		print "Wrong usage. Exit..."
 		sys.exit()
 	T = int(raw_input())
@@ -101,7 +100,7 @@ def __main__():
 	p.generate(len(graph))
 
 	for i in xrange(int(sys.argv[2])):
-		p = GeneticAlgorithm.evolution(p)
+		p = GeneticAlgorithm.evolution(p, int(sys.argv[3]))
 	print "Solution:", p.population[0], "with distance = ", p.population[0].cost
 
 __main__()
