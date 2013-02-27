@@ -1,3 +1,5 @@
+# Traveling saleman problem solution using Genetic algorithm.
+# Author: Quoc
 import sys
 import random
 
